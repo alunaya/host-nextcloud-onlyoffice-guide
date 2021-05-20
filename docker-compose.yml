@@ -1,0 +1,69 @@
+version: '3.9'
+volumes:
+  nextcloud:
+  mariadb:
+  
+
+networks:
+  nextcloud:
+
+services:
+  nextcloud:
+    image: nextcloud:21
+    restart: always
+    environment:
+      - MYSQL_PASSWORD=test123
+      - MYSQL_USER=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_HOST=mariadb
+    ports: 
+      - 3000:80
+    volumes:
+      - nextcloud:/var/www/html
+      - /mnt/docker-mount/nextcloud-app:/var/www/html/custom_apps
+      - /mnt/docker-mount/nextcloud-config:/var/www/html/config
+      - /mnt/docker-mount/nextcloud-data:/var/www/html/data
+    networks:
+      nextcloud:
+        aliases:
+          - nextcloud
+
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      - ADMINER_DEFAULT_SERVER=mariadb
+    ports:
+      - 5000:8080
+    networks:
+      nextcloud:
+        aliases: 
+          - adminer
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=test123
+      - MYSQL_PASSWORD=test123
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    ports:
+      - 3306:3306
+    volumes:
+      - mariadb:/var/lib/mysql
+    networks:
+      nextcloud:
+        aliases:
+          - mariadb
+  
+  onlyoffice:
+    image: onlyoffice/documentserver
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      nextcloud:
+        aliases:
+          - docserver
+  
