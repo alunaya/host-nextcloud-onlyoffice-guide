@@ -42,7 +42,7 @@ Trong file config.php tại thư mục **/mnt/docker-mount/nextcloud-config** ta
 
 Ta cần cài đặt Onlyoffice apps cho Nextcloud, ta có 2 các cài đặt
 - Dùng app store của nextcloud (nếu có internet)
-- Tải về và cài đặt ở local (![Xem hướng dẫn cài đặt](#Huong-dan-cai-dat-o-local))
+- Tải về và cài đặt ở local ([Xem hướng dẫn cài đặt](#Huong-dan-cai-dat-o-local))
 
 Vào */settings/apps/disabled*, enable OnlyOffice app
 
