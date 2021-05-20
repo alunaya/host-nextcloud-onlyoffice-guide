@@ -50,6 +50,9 @@ Tiếp đó ta vào */settings/admin/onlyoffice* config các trường
 - Document Editing Service address: public address của OnlyOffice Server (vd: http://192.168.56.3:8080/) 
 - Document Editing Service address for internal requests from the server (trong advanced setting): http://docserver/ (theo alias docker) (Optional)
 - Server address for internal requests from the Document Editing Service (trong advanced setting): http://nextcloud/ (theo alias docker) (Optional)
+- Đánh sercret key đã config trên OnlyOffice vào trường secretkey
+
+![nextcloud onlyoffice app](/screenshot/nextcloud-onlyoffice-app.PNG)
 
 #### Hướng dẫn cài đặt ở local
 Tải release của onlyoffice app (ở đây ta dùng link bản v7.0.2, có thể dùng bản khác)
