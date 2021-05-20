@@ -1,7 +1,7 @@
 # Hướng dẫn cài đặt thử nghiệm Nextcloud và OnlyOffice trên một Server
 
 ## Tạo các container
-Đầu tiên ta cần cài đặt ![Docker](https://docs.docker.com/engine/install/ubuntu/) và ![Docker-compose](https://docs.docker.com/compose/install/)
+Đầu tiên ta cần cài đặt [Docker](https://docs.docker.com/engine/install/ubuntu/) và [Docker-compose](https://docs.docker.com/compose/install/)
 
 Tạo các thư mục:
 - /mnt/docker-mount/nextcloud-app
@@ -42,7 +42,7 @@ Trong file config.php tại thư mục **/mnt/docker-mount/nextcloud-config** ta
 
 Ta cần cài đặt Onlyoffice apps cho Nextcloud, ta có 2 các cài đặt
 - Dùng app store của nextcloud (nếu có internet)
-- Tải về và cài đặt ở local (![Xem hướng dẫn cài đặt](Huong-dan-cai-dat-o-local))
+- Tải về và cài đặt ở local (![Xem hướng dẫn cài đặt](#Huong-dan-cai-dat-o-local))
 
 Vào */settings/apps/disabled*, enable OnlyOffice app
 
